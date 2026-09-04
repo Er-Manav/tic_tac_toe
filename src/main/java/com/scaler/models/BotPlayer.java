@@ -32,6 +32,6 @@ public class BotPlayer extends Player {
 
     @Override
     public Move makeMove(Board board) {
-        return null;
+        return playingStrategy.makeMove(board, this);
     }
 }

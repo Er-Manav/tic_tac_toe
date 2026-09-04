@@ -1,11 +1,9 @@
 package com.scaler.strategy;
 
-import com.scaler.models.Board;
+import java.util.HashMap;
+
 import com.scaler.models.Move;
 import com.scaler.models.Player;
-
-import java.lang.foreign.PaddingLayout;
-import java.util.HashMap;
 
 public class DiagonalWinningStrategy implements WinningStrategy {
     //Diagonal Hashmaps.
@@ -42,7 +40,7 @@ public class DiagonalWinningStrategy implements WinningStrategy {
             rightDiagonalMap.put(character, rightDiagonalMap.get(character) + 1);
         }
 
-        return leftDiagonalMap.get(character) == size ||
-                rightDiagonalMap.get(character) == size;
+        return leftDiagonalMap.getOrDefault(character, 0) == size ||
+            rightDiagonalMap.getOrDefault(character, 0) == size;
     }
 }

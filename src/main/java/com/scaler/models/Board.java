@@ -1,5 +1,7 @@
 package com.scaler.models;
 
+import com.scaler.models.enums.CellState;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,5 +35,14 @@ public class Board {
 
     public void setCells(List<List<Cell>> cells) {
         this.cells = cells;
+    }
+
+    public void display() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                cells.get(row).get(col).display();
+            }
+            System.out.println(); // new line print
+        }
     }
 }

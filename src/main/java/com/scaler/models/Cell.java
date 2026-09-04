@@ -45,4 +45,8 @@ public class Cell {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public boolean isEmpty() {
+        return cellState == CellState.EMPTY;
+    }
 }
