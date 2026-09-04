@@ -40,9 +40,17 @@ public class Board {
     public void display() {
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
-                cells.get(row).get(col).display();
+                Cell cell = cells.get(row).get(col);
+                String value = cell.isEmpty() ? " " : cell.getPlayer().getSymbol().getCharacter().toString();
+                System.out.print(" " + value + " ");
+                if (col < size - 1) {
+                    System.out.print("|");
+                }
             }
-            System.out.println(); // new line print
+            System.out.println();
+            if (row < size - 1) {
+                System.out.println("---".repeat(size * 2 - 1));
+            }
         }
     }
 }
